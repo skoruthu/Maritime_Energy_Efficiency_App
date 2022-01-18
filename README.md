@@ -1,7 +1,7 @@
 # Visualizing_Maritime_Energy_Efficiency_Statistics
-Deployment on Heroku can be found <a href="https://bt5110-maritime.herokuapp.com/"> <strong> here </strong> </a>.
+<h2> Deployment on Heroku can be found <a href="https://bt5110-maritime.herokuapp.com/"> <strong> here </strong> </a>. </h2>
 
-#### App Deployed
+#### App Deployed 
 Django application on Heroku
 
 #### Techniques Employed
