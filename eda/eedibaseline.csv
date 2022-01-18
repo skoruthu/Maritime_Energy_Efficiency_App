@@ -1,0 +1,14 @@
+﻿Ship type defined in Regulation 2,a,b,c
+Bulk Carrier,961.79,DWT,0.477
+Gas Carrier,1120.00,DWT,0.456
+Tanker,1218.80,DWT,0.488
+Container ship,174.22,DWT,0.201
+General cargo ship,107.48,DWT,0.216
+Refrigerated cargo carrier,227.01,DWT,0.244
+Combination carrier,1219.00,DWT,0.488
+Ro-Ro cargo ship (vehicle carrier),(DWT/GT)-0.7x780.36 where DWT/GT <0.3,DWT,0.471
+Ro-Ro cargo ship (vehicle carrier),1812.63 where DWT/GT³0.3,DWT,0.471
+Ro-Ro cargo ship,1405.15,DWT,0.498
+Ro-Ro passenger ship,752.16,DWT,0.381
+LNG carrier,2253.7,DWT,0.474
+Cruise passenger ship having non-conventional propulsion,170.84,DWT,0.214

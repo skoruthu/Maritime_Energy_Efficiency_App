@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+{% load static %}
+
+{% block content %}
+
+<div class="jumbotron text-center" style="background: white; color: black; padding-bottom: 10px;">
+  <div class="container">
+    <ul style='font-size: 15px;' class="list-inline">
+      <li class="list-inline-item"><a href="/"><span class="glyphicon glyphicon-leaf" style="font-size: 75px;"></span></a></li>
+      <li class="list-inline-item"><a href="/"><span class="glyphicon glyphicon-asterisk" style="font-size: 75px;"></span></a></li>
+      <li class="list-inline-item"><a href="/"><span class="glyphicon glyphicon-flag" style="font-size: 75px;"></span></a></li>
+      <li class="list-inline-item"><a href="/"><span class="glyphicon glyphicon-asterisk" style="font-size: 75px;"></span></a></li>
+      <li class="list-inline-item"><a href="/"><span class="glyphicon glyphicon-leaf" style="font-size: 75px;"></span></a></li>
+    </ul>
+    
+    <h1>
+      Welcome to our BT5110<br/>
+      Maritime Energy Efficiency Project
+    </h1>
+    <p style="color: black; font-size: 20px; margin-bottom: 0;">
+      Visualise maritime energy efficiency statistics here!
+    </p>
+    <br>
+    <ul style='font-size: 15px;' class="list-inline">
+      <li class="list-inline-item">Gino Martelli Tiu (A0231956Y)</li>
+      <li class="list-inline-item"> | </li>
+      <li class="list-inline-item">Rachel Sng Wei Lin (A0231921N)</li>
+      <li class="list-inline-item"> | </li>
+      <li class="list-inline-item">Susan Koruthu (A0231905L)</li>
+      <li class="list-inline-item"> | </li>
+      <li class="list-inline-item">Widya Salim (A0231857Y)</li>
+    </ul>
+    
+    <p style="color: black; font-size: 20px; margin-bottom: 0;"><strong>New interesting cases which we've explored include:</strong></p>
+    <ul style='font-size: 15px; list-style-type:none;'>
+      <li><a href = '/fuel_performance/'> What is the fuel consumption of each ship type and engine, when compared to its performance or features?</a></li>
+      <li><a href = '/verifiers_ranking/'>Which are the most polluting Maritime Verifiers? </a></li>
+      <li><a href = '/built_year_efficiency/'>Find out reported efficiency of ships built in different years </a></li>
+    </ul><br>
+    </div>
+    <a type="button" class="btn btn-lg btn-default" href="https://github.com/salimwid/-bt5110_maritime">
+      <span class="glyphicon glyphicon-download"></span> Source on GitHub
+    </a><br><br>
+    
+  </div>
+</div>
+{% endblock %}

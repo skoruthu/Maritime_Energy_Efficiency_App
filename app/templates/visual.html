@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block title %} Emissions {% endblock %}
+{% load static %}
+
+{% block content %}
+<style>
+    input {
+     display: flex;
+     justify-content: center;
+     margin: 0 auto;
+   }
+
+    label {
+     display: flex;
+     margin: 0 auto;
+   }
+
+    select {
+     margin-bottom: 10px;
+     margin-top: 10px;
+   }
+
+   .select_multiple{
+       float:left;
+       padding: 10px;
+   }
+</style>
+
+<div class="container">
+    <h2>{{ title }}</h2>
+    <p>{{ description }}</p><br>
+    <p><strong><u>Interact with this graph:</u></strong>
+    {{ interaction }}</p>
+    <p>After interacting, please wait briefly as the graph will reload with the new information selected.</p>
+
+    <form action="#">
+        {% if dropdowns %}
+        {% for dropdown in dropdowns %}
+        <div class="select_multiple">
+            <label for="{{ dropdown.id }}">{{ dropdown.label }}</label>
+            <select id="{{ dropdown.id }}">
+                {% for option in dropdown.options %}
+                <option value="{{ option.value }}">{{ option.label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% if checkboxes %}
+        {% for checkbox in checkboxes %}
+        <div>
+            <fieldset>      
+                <legend>{{ checkbox.label }}</legend>
+                {% for option in checkbox.options %}
+                <input type="checkbox" id="{{ checkbox.id }}{{ option.value }}" value="{{ option.value }}"
+                {% if option.checked %}checked{% endif %}>{{ option.label }}<br>
+                {% endfor %}     
+            </fieldset>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </form>
+</div>
+<script>
+    function reload() {
+        const baseUrl = new URL(document.location);
+        const newUrl = new URL(baseUrl.origin + baseUrl.pathname);
+
+        let params = newUrl.searchParams;
+        ids = [];
+        {% if dropdowns %}
+        {% for dropdown in dropdowns %}
+        params.set("{{ dropdown.id }}", $("#{{ dropdown.id }}").val());
+        {% endfor %}
+        {% endif %}
+        {% if checkboxes %}
+        {% for checkbox in checkboxes %}
+        {% for option in checkbox.options %}
+        if ($("#{{ checkbox.id }}{{ option.value }}").is(":checked")) {
+            params.append("{{ checkbox.id }}", "{{ option.value }}");
+        }
+        {% endfor %}
+        {% endfor %}
+        {% endif %}
+        window.location.href = newUrl.toString();
+        
+    }
+    {% if dropdowns %}
+    {% for dropdown in dropdowns %}
+    $("#{{ dropdown.id }}").on("change", reload);
+    {% endfor %}
+    {% endif %}
+    {% if checkboxes %}
+    {% for checkbox in checkboxes %}
+        {% for option in checkbox.options %}
+        $("#{{ checkbox.id}}{{ option.value }}").on("change", reload);
+        {% endfor %}
+    {% endfor %}
+    {% endif %}
+</script>
+
+<div class="container" style='text-align: center;'>
+    <p style='text-align: center; font-size: 17px;'>{{ selected_metrics }} <strong>{{ chosen_metrics }}</strong></p>
+    {% for graph in graphs %}
+    <div class="container" style="padding-bottom: 50px;">
+        {% autoescape off %}
+            {{ graph }}
+        {% endautoescape %}
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

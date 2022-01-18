@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS co2emission_reduced (
+    imo BIGINT,
+    ship_name VARCHAR(64) NOT NULL,
+	ship_type VARCHAR(64),
+	issue_date DATE NOT NULL,
+	expiry_date DATE NOT NULL,
+	fuel_consumption REAL,
+	sea_time REAL,
+	co2_distance REAL,
+	co2_transport REAL,
+    EIV REAL,
+	EEDI REAL
+);
