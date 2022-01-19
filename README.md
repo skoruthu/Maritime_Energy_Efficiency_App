@@ -18,8 +18,8 @@ Among others, the following use cases were explored: <br>
 We examined the best way to present the data inside a Star Schema & Dimension Table (see report).
 
 ### Collaborators
-Rachel Sng (@rachelsng)<br>
-Widya Salim (@salimwid)<br>
 Gino Martelli Tiu (@ginosytiu)<br>
-Susan Koruthu (@skoruthu)
+Rachel Sng (@rachelsng)<br>
+Susan Koruthu (@skoruthu) <br>
+Widya Salim (@salimwid)
 
